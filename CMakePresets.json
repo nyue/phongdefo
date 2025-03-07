@@ -61,7 +61,7 @@
 	    },
 	    "cacheVariables": {
 		"nanoflann_DIR" : "$env{HOME}/systems/nanoflann/1.7.0/share/cmake/nanoflann",
-		"eigen_DIR" : "$env{HOME}/systems/eigen/3.3.9/share/eigen3/cmake"
+		"Eigen3_DIR" : "$env{HOME}/systems/Eigen3/3.3.9/share/eigen3/cmake"
 	    }
 	},
 	{
