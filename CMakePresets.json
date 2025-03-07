@@ -12,7 +12,6 @@
       "description": "debug ebug build using Ninja generator",
       "generator": "Ninja",
       "environment": {
-        "LEXACTIVATOR_HOME": "$env{HOME}/systems/LexActivator/static/3.21.4"
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
@@ -30,7 +29,8 @@
       "binaryDir": "${sourceDir}/build/ubuntu-debug",
       "environment": {
       },
-      "cacheVariables": {
+		"cacheVariables": {
+			"nanoflann_DIR" : "$env{HOME}/nanoflann/1.7.0/share/cmake/nanoflann"
       }
     },
     {
