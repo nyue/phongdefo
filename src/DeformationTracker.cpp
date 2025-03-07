@@ -1,6 +1,7 @@
 #include "DeformationTracker.h"
 
 #include <UT/UT_Assert.h>
+#include <GEO/GEO_Primitive.h>
 #include <array>
 #include <vector>
 #include <iostream>

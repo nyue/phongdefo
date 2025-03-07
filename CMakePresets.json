@@ -147,6 +147,23 @@
 	    }
 	},
 	{
+	    "name": "rhel-h200-debug",
+	    "displayName": "RHEL Debug Config",
+	    "description": "Red Hat Enterprise Linux debug build using Ninja generator",
+	    "inherits": "rhel-debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-debug",
+	    "environment": {
+	    },
+	    "vendor": {
+		"jetbrains.com/clion": {
+		    "toolchain": "Houdini200"
+		}
+	    },
+	    "cacheVariables": {
+	    }
+	},
+	{
 	    "name": "rhel-h205-debug",
 	    "displayName": "RHEL Debug Config",
 	    "description": "Red Hat Enterprise Linux debug build using Ninja generator",
