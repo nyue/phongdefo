@@ -18,3 +18,8 @@ make install
 
 [source the Houdini environment](https://www.sidefx.com/docs/hdk/_h_d_k__intro__compiling.html) in your shell beforehand. The SOP depends on two header-only libraries, [eigen](https://gitlab.com/libeigen/eigen) for linear algebra operations and [nanoflann](https://github.com/jlblancoc/nanoflann) for its kdtree implementation. This has only been tested on a 64-bit linux machine, running the free version of houdini v19.5. Tinkering is probably needed for compiling and installing on different systems.
 
+### 3. Dependencies
+
+On Windows
+[nanoflann](https://github.com/jlblancoc/nanoflann/releases/tag/v1.7.0)
+[eigen](https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.zip)
