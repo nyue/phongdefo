@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.26)
 
 project(phongdefo)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 find_package(nanoflann CONFIG REQUIRED)
 find_package(Eigen3 CONFIG REQUIRED)
 find_package(HDK REQUIRED)
