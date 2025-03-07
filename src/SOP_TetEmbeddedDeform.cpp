@@ -7,8 +7,8 @@
 #include <OP/OP_Operator.h>
 #include <OP/OP_OperatorTable.h>
 #include <PRM/PRM_Include.h>
-#include <PRM/PRM_Range.h>
-#include <UT/UT_DSOVersion.h>
+// #include <PRM/PRM_Range.h>
+// #include <UT/UT_DSOVersion.h>
 
 #include <iostream>
 

@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.26)
+
 project(phongdefo)
 
 find_package(Eigen3 CONFIG REQUIRED)

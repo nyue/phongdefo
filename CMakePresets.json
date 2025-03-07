@@ -1,0 +1,88 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug Config",
+      "description": "debug ebug build using Ninja generator",
+      "generator": "Ninja",
+      "environment": {
+        "LEXACTIVATOR_HOME": "$env{HOME}/systems/LexActivator/static/3.21.4"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_LINUX_INSTRUMENTATION": "ON",
+        "CMAKE_INSTALL_PREFIX": "/tmp/phongdefo",
+        "CMAKE_MODULE_PATH": "$env{CMAKE_UTIL_PATH};$env{CMAKE_MODULE_PATH}"
+      }
+    },
+    {
+      "name": "ubuntu-debug",
+      "displayName": "Ubuntu Debug Config",
+      "description": "Ubuntu debug ebug build using Ninja generator",
+      "inherits": "debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ubuntu-debug",
+      "environment": {
+      },
+      "cacheVariables": {
+      }
+    },
+    {
+      "name": "ubuntu-h195-debug",
+      "displayName": "Ubuntu HDK Debug Config",
+      "description": "Ubuntu Houdini development kit debug build using Ninja generator",
+      "inherits": "ubuntu-debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ubuntu-h195-debug",
+      "environment": {
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Houdini195"
+        }
+      },
+      "cacheVariables": {
+      }
+    },
+    {
+      "name": "ubuntu-h200-debug",
+      "displayName": "Ubuntu HDK Debug Config",
+      "description": "Ubuntu Houdini development kit debug build using Ninja generator",
+      "inherits": "ubuntu-debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ubuntu-h200-debug",
+      "environment": {
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Houdini200"
+        }
+      },
+      "cacheVariables": {
+      }
+    },
+    {
+      "name": "ubuntu-h205-debug",
+      "displayName": "Ubuntu HDK Debug Config",
+      "description": "Ubuntu Houdini development kit debug build using Ninja generator",
+      "inherits": "ubuntu-debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ubuntu-h205-debug",
+      "environment": {
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Houdini205"
+        }
+      },
+      "cacheVariables": {
+      }
+    }
+  ]
+}
