@@ -6,6 +6,19 @@
 	"patch": 0
     },
     "configurePresets": [
+		{
+			"name": "macos-debug",
+			"displayName": "MacOS Debug Config",
+			"description": "MacOS debug build using Ninja generator",
+			"inherits": "debug",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/macos-debug",
+			"environment": {
+			},
+			"cacheVariables": {
+				"CPACK_GENERATOR": "ZIP"
+			}
+		},
 	{
 	    "name": "win10",
 	    "displayName": "Windows 10",
