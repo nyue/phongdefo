@@ -1,118 +1,168 @@
 {
-  "version": 3,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 22,
-    "patch": 0
-  },
-  "configurePresets": [
-    {
-      "name": "win10",
-      "displayName": "Windows 10",
-      "description": "Windows 10",
-      "generator": "Ninja",
-      "environment": {
-      },
-      "cacheVariables": {
-        "CPACK_GENERATOR": "ZIP",
-        "CMAKE_MODULE_PATH": "$env{CMAKE_UTIL_PATH};$env{CMAKE_MODULE_PATH}"
-      }
+    "version": 3,
+    "cmakeMinimumRequired": {
+	"major": 3,
+	"minor": 22,
+	"patch": 0
     },
-    {
-      "name": "win10-vs2019",
-      "displayName": "Windows 10 VS2019",
-      "description": "Windows 10 VS2019",
-      "inherits": "win10",
-      "generator": "Visual Studio 16 2019",
-      "environment": {},
-      "cacheVariables": {}
-    },
-    {
-      "name": "win10-ninja",
-      "displayName": "Windows 10 Ninja",
-      "description": "Windows 10 Ninja",
-      "inherits": "win10",
-      "generator": "Ninja",
-      "environment": {},
-      "cacheVariables": {}
-    },
-    {
-      "name": "debug",
-      "displayName": "Debug Config",
-      "description": "debug ebug build using Ninja generator",
-      "generator": "Ninja",
-      "environment": {
-      },
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "ENABLE_LINUX_INSTRUMENTATION": "ON",
-        "CMAKE_INSTALL_PREFIX": "/tmp/phongdefo",
-        "CMAKE_MODULE_PATH": "$env{CMAKE_UTIL_PATH};$env{CMAKE_MODULE_PATH}"
-      }
-    },
-    {
-      "name": "ubuntu-debug",
-      "displayName": "Ubuntu Debug Config",
-      "description": "Ubuntu debug ebug build using Ninja generator",
-      "inherits": "debug",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/ubuntu-debug",
-      "environment": {
-      },
-		"cacheVariables": {
-			"nanoflann_DIR" : "$env{HOME}/nanoflann/1.7.0/share/cmake/nanoflann"
-      }
-    },
-    {
-      "name": "ubuntu-h195-debug",
-      "displayName": "Ubuntu HDK Debug Config",
-      "description": "Ubuntu Houdini development kit debug build using Ninja generator",
-      "inherits": "ubuntu-debug",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/ubuntu-h195-debug",
-      "environment": {
-      },
-      "vendor": {
-        "jetbrains.com/clion": {
-          "toolchain": "Houdini195"
-        }
-      },
-      "cacheVariables": {
-      }
-    },
-    {
-      "name": "ubuntu-h200-debug",
-      "displayName": "Ubuntu HDK Debug Config",
-      "description": "Ubuntu Houdini development kit debug build using Ninja generator",
-      "inherits": "ubuntu-debug",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/ubuntu-h200-debug",
-      "environment": {
-      },
-      "vendor": {
-        "jetbrains.com/clion": {
-          "toolchain": "Houdini200"
-        }
-      },
-      "cacheVariables": {
-      }
-    },
-    {
-      "name": "ubuntu-h205-debug",
-      "displayName": "Ubuntu HDK Debug Config",
-      "description": "Ubuntu Houdini development kit debug build using Ninja generator",
-      "inherits": "ubuntu-debug",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/ubuntu-h205-debug",
-      "environment": {
-      },
-      "vendor": {
-        "jetbrains.com/clion": {
-          "toolchain": "Houdini205"
-        }
-      },
-      "cacheVariables": {
-      }
-    }
-  ]
+    "configurePresets": [
+	{
+	    "name": "win10",
+	    "displayName": "Windows 10",
+	    "description": "Windows 10",
+	    "generator": "Ninja",
+	    "environment": {
+	    },
+	    "cacheVariables": {
+		"CPACK_GENERATOR": "ZIP",
+		"CMAKE_MODULE_PATH": "$env{CMAKE_UTIL_PATH};$env{CMAKE_MODULE_PATH}"
+	    }
+	},
+	{
+	    "name": "win10-vs2019",
+	    "displayName": "Windows 10 VS2019",
+	    "description": "Windows 10 VS2019",
+	    "inherits": "win10",
+	    "generator": "Visual Studio 16 2019",
+	    "environment": {},
+	    "cacheVariables": {}
+	},
+	{
+	    "name": "win10-ninja",
+	    "displayName": "Windows 10 Ninja",
+	    "description": "Windows 10 Ninja",
+	    "inherits": "win10",
+	    "generator": "Ninja",
+	    "environment": {},
+	    "cacheVariables": {}
+	},
+	{
+	    "name": "debug",
+	    "displayName": "Debug Config",
+	    "description": "debug build using Ninja generator",
+	    "generator": "Ninja",
+	    "environment": {
+	    },
+	    "cacheVariables": {
+		"CMAKE_BUILD_TYPE": "Debug",
+		"ENABLE_LINUX_INSTRUMENTATION": "ON",
+		"CMAKE_INSTALL_PREFIX": "/tmp/phongdefo",
+		"CMAKE_MODULE_PATH": "$env{CMAKE_UTIL_PATH};$env{CMAKE_MODULE_PATH}"
+	    }
+	},
+	{
+	    "name": "ubuntu-debug",
+	    "displayName": "Ubuntu Debug Config",
+	    "description": "Ubuntu debug build using Ninja generator",
+	    "inherits": "debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-debug",
+	    "environment": {
+	    },
+	    "cacheVariables": {
+		"nanoflann_DIR" : "$env{HOME}/systems/nanoflann/1.7.0/share/cmake/nanoflann",
+		"eigen_DIR" : "$env{HOME}/systems/eigen/3.3.9/share/eigen3/cmake"
+	    }
+	},
+	{
+	    "name": "ubuntu-h195-debug",
+	    "displayName": "Ubuntu HDK Debug Config",
+	    "description": "Ubuntu Houdini development kit debug build using Ninja generator",
+	    "inherits": "ubuntu-debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-h195-debug",
+	    "environment": {
+	    },
+	    "vendor": {
+		"jetbrains.com/clion": {
+		    "toolchain": "Houdini195"
+		}
+	    },
+	    "cacheVariables": {
+	    }
+	},
+	{
+	    "name": "ubuntu-h200-debug",
+	    "displayName": "Ubuntu HDK Debug Config",
+	    "description": "Ubuntu Houdini development kit debug build using Ninja generator",
+	    "inherits": "ubuntu-debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-h200-debug",
+	    "environment": {
+	    },
+	    "vendor": {
+		"jetbrains.com/clion": {
+		    "toolchain": "Houdini200"
+		}
+	    },
+	    "cacheVariables": {
+	    }
+	},
+	{
+	    "name": "ubuntu-h205-debug",
+	    "displayName": "Ubuntu HDK Debug Config",
+	    "description": "Ubuntu Houdini development kit debug build using Ninja generator",
+	    "inherits": "ubuntu-debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-h205-debug",
+	    "environment": {
+	    },
+	    "vendor": {
+		"jetbrains.com/clion": {
+		    "toolchain": "Houdini205"
+		}
+	    },
+	    "cacheVariables": {
+	    }
+	},
+	{
+	    "name": "rhel-debug",
+	    "displayName": "RHEL Debug Config",
+	    "description": "Red Hat Enterprise Linux debug build using Ninja generator",
+	    "inherits": "debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-debug",
+	    "environment": {
+	    },
+	    "cacheVariables": {
+		"nanoflann_DIR" : "$env{HOME}/systems/nanoflann/1.7.0/share/cmake/nanoflann",
+		"Eigen3_DIR" : "$env{HOME}/systems/Eigen3/3.3.9/share/eigen3/cmake"
+	    }
+	},
+	{
+	    "name": "rhel-h195-debug",
+	    "displayName": "RHEL Debug Config",
+	    "description": "Red Hat Enterprise Linux debug build using Ninja generator",
+	    "inherits": "rhel-debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-debug",
+	    "environment": {
+	    },
+	    "vendor": {
+		"jetbrains.com/clion": {
+		    "toolchain": "Houdini195"
+		}
+	    },
+	    "cacheVariables": {
+	    }
+	},
+	{
+	    "name": "rhel-h205-debug",
+	    "displayName": "RHEL Debug Config",
+	    "description": "Red Hat Enterprise Linux debug build using Ninja generator",
+	    "inherits": "rhel-debug",
+	    "generator": "Ninja",
+	    "binaryDir": "${sourceDir}/build/ubuntu-debug",
+	    "environment": {
+	    },
+	    "vendor": {
+		"jetbrains.com/clion": {
+		    "toolchain": "Houdini205"
+		}
+	    },
+	    "cacheVariables": {
+	    }
+	}
+
+    ]
 }
