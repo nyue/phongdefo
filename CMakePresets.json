@@ -7,6 +7,36 @@
   },
   "configurePresets": [
     {
+      "name": "win10",
+      "displayName": "Windows 10",
+      "description": "Windows 10",
+      "generator": "Ninja",
+      "environment": {
+      },
+      "cacheVariables": {
+        "CPACK_GENERATOR": "ZIP",
+        "CMAKE_MODULE_PATH": "$env{CMAKE_UTIL_PATH};$env{CMAKE_MODULE_PATH}"
+      }
+    },
+    {
+      "name": "win10-vs2019",
+      "displayName": "Windows 10 VS2019",
+      "description": "Windows 10 VS2019",
+      "inherits": "win10",
+      "generator": "Visual Studio 16 2019",
+      "environment": {},
+      "cacheVariables": {}
+    },
+    {
+      "name": "win10-ninja",
+      "displayName": "Windows 10 Ninja",
+      "description": "Windows 10 Ninja",
+      "inherits": "win10",
+      "generator": "Ninja",
+      "environment": {},
+      "cacheVariables": {}
+    },
+    {
       "name": "debug",
       "displayName": "Debug Config",
       "description": "debug ebug build using Ninja generator",
