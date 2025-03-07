@@ -2,6 +2,7 @@
 #define __TETMESH_H__
 
 #include <Eigen/Dense>
+#include <vector>
 
 namespace TetEmbeddedDeform
 {

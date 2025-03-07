@@ -90,7 +90,7 @@ namespace TetEmbeddedDeform {
         using kdtree = nanoflann::KDTreeEigenMatrixAdaptor<Matrix3X, 3, nanoflann::metric_L2, false>;
 
         kdtree index(3, std::cref(pointsMat), 5);
-        index.index->buildIndex();
+        index.index_->buildIndex();
 
         std::vector<Embedding> embeddings(points.size());
 
@@ -101,7 +101,7 @@ namespace TetEmbeddedDeform {
             std::vector<float> dists(nresults);
             nanoflann::KNNResultSet<float> results(nresults);
             results.init(&indices[0], &dists[0]);
-            index.index->findNeighbors(results, points[i].data(), nanoflann::SearchParams(10));
+            index.index_->findNeighbors(results, points[i].data(), nanoflann::SearchParameters(10));
 
             // Map those points to coincident cells.
             std::vector<size_t> cells;
