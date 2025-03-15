@@ -25,3 +25,16 @@ target_link_libraries(SOP_TetEmbeddedDeform
 	Eigen3::Eigen
 	nanoflann::nanoflann
 	)
+
+install(TARGETS
+	SOP_TetEmbeddedDeform
+	DESTINATION
+	dso
+	)
+
+install(FILES
+    phongdefo.json.in
+    install_package.py
+    DESTINATION
+    .
+    )

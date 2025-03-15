@@ -1,0 +1,5 @@
+{
+	"env" : [
+		{ "HOUDINI_PATH" : "{{ houdini_path }}" }
+	]
+}
