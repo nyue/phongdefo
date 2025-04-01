@@ -65,6 +65,7 @@ SOP_TetEmbeddedDeform::SOP_TetEmbeddedDeform(
     SOP_Node(net, name, op)
 {
     mySopFlags.setManagesDataIDs(true);
+    std::cout << "Nicholas demo 2\n";
 }
 
 SOP_TetEmbeddedDeform::~SOP_TetEmbeddedDeform()
